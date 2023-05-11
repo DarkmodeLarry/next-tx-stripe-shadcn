@@ -6,7 +6,7 @@ import './env.mjs'
 const nextConfig = {
   reactStrictMode: true,
   typescript: {
-    ignoreBuildErrors: true
+    ignoreBuildErrors: false
   },
   images: {
     domains: ['avatars.githubusercontent.com', 'lh3.googleusercontent.com', 'files.stripe.com']
@@ -18,3 +18,4 @@ const nextConfig = {
 }
 
 export default withContentlayer(nextConfig)
+

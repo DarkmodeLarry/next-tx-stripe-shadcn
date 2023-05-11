@@ -4,7 +4,7 @@ interface EditorProps {
 
 export default function EditorLayout({ children }: EditorProps) {
   return (
-    <div className="container mx-auto grid items-start gap-10 py-8">
+    <div className="container grid items-start gap-10 py-8 mx-auto bg-sage-1">
       {children}
     </div>
   )

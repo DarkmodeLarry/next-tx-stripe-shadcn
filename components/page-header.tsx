@@ -1,25 +1,38 @@
-import { cn } from "@/lib/utils"
+import Balance from 'react-wrap-balancer'
 
-interface DocsPageHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
-  heading: string
-  text?: string
-}
+import { cn } from '@/lib/utils'
 
-export function DocsPageHeader({
-  heading,
-  text,
-  className,
-  ...props
-}: DocsPageHeaderProps) {
+function PageHeader({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <>
-      <div className={cn("space-y-4", className)} {...props}>
-        <h1 className="inline-block font-heading text-4xl lg:text-5xl">
-          {heading}
-        </h1>
-        {text && <p className="text-xl text-muted-foreground">{text}</p>}
-      </div>
-      <hr className="my-4" />
-    </>
+    <section
+      className={cn('flex max-w-[980px] flex-col items-start gap-2 py-6', className)}
+      {...props}
+    />
   )
 }
+
+function PageHeaderHeading({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
+  return (
+    <h1
+      className={cn(
+        'text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:text-6xl lg:leading-[1.1]',
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function PageHeaderDescription({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLParagraphElement>) {
+  return (
+    <Balance
+      className={cn('max-w-[750px] text-lg text-muted-foreground sm:text-xl', className)}
+      {...props}
+    />
+  )
+}
+
+export { PageHeader, PageHeaderHeading, PageHeaderDescription }

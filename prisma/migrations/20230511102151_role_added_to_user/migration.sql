@@ -1,3 +1,6 @@
+-- CreateEnum
+CREATE TYPE "Role" AS ENUM ('USER_ROLE_SUPER_ADMIN', 'USER_ROLE_ADMIN', 'USER_ROLE_USER');
+
 -- CreateTable
 CREATE TABLE "accounts" (
     "id" TEXT NOT NULL,
@@ -34,9 +37,10 @@ CREATE TABLE "users" (
     "name" TEXT,
     "email" TEXT,
     "emailVerified" TIMESTAMP(3),
+    "role" TEXT NOT NULL DEFAULT 'user',
     "image" TEXT,
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
     "stripe_customer_id" TEXT,
     "stripe_subscription_id" TEXT,
     "stripe_price_id" TEXT,

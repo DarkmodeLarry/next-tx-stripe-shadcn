@@ -28,5 +28,10 @@ export const dashboardConfig: DashboardConfig = {
       href: "/dashboard/settings",
       icon: "settings",
     },
+    {
+      title: "Schedule A Swim",
+      href: "/dashboard/menu",
+      icon: "calendar",
+    }
   ],
 }
